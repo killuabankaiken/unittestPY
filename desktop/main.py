@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 from mysql.connector import connect
 import datetime
 
@@ -61,7 +62,7 @@ def create_order():
     connection.commit()
     c.close()
     connection.close()
-
+    messagebox.showinfo('Уведомление', 'Заказ успешно создан!')
 submit = tk.Button(app, text='Создать заказ', width=30, height=5, command=create_order)
 submit.grid(row=5, column=0, columnspan=4, padx=10, pady=10, sticky='nsew')
 
